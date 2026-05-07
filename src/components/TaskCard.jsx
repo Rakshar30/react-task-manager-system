@@ -3,7 +3,6 @@ import React from "react";
 export default function TaskCard({ task, isAdmin, onDelete, onEdit }) {
   return (
     <div className="p-4 bg-white position-relative">
-      {/* CRUD Action Buttons for Admin only */}
       {isAdmin && (
         <div className="position-absolute top-0 end-0 p-3 d-flex gap-2">
           <button className="btn btn-light btn-sm border" onClick={() => onEdit(task)}>
