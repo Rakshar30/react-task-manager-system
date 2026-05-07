@@ -9,8 +9,6 @@ const TaskForm = ({ onSave, tasks, existingTask = null, onClose }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!formData.title) return alert("Title is required");
-
-    // Task Relationship Logic
     if (formData.relatedTaskId) {
       const related = tasks.find(t => t.id === parseInt(formData.relatedTaskId));
       if (related && related.assignedTo !== formData.assignedTo) {
@@ -18,11 +16,9 @@ const TaskForm = ({ onSave, tasks, existingTask = null, onClose }) => {
         return;
       }
     }
-
     onSave(formData);
     onClose();
   };
-
   return (
     <div className="modal show d-block" style={{ backgroundColor: 'rgba(0,0,0,0.6)' }}>
       <div className="modal-dialog">
