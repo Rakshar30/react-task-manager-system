@@ -12,7 +12,6 @@ const MainApp = () => {
   const [search, setSearch] = useState('');
   const [sortBy, setSortBy] = useState('title');
 
-  // Persistence
   useEffect(() => {
     const data = localStorage.getItem('tasks_db');
     if (data) setTasks(JSON.parse(data));
@@ -58,7 +57,6 @@ const MainApp = () => {
   }
 };
 
-  // Safe Filtering Logic
   const filteredTasks = tasks
     .filter(t => {
       if (!currentUser) return false;
@@ -74,7 +72,6 @@ const MainApp = () => {
       return valA.localeCompare(valB);
     });
 
-  // Login Screen
   if (!currentUser) {
     return (
       <div className="vh-100 d-flex justify-content-center align-items-center" 
@@ -108,7 +105,6 @@ const MainApp = () => {
     );
   }
 
-  // Dashboard Screen
   return (
     <div className="min-vh-100 py-4" style={{ backgroundColor: '#f8fafc', fontFamily: "'Inter', sans-serif" }}>
       <div className="container" style={{ maxWidth: '1100px' }}>
@@ -230,8 +226,7 @@ const MainApp = () => {
       </div>
     </div>
   );
-}; // <-- This closes MainApp
-
+}; // 
 export default function App() {
   return (
     <AuthProvider>
