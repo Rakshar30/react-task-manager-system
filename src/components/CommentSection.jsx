@@ -24,8 +24,6 @@ const CommentSection = ({ task, onAddComment, currentUser }) => {
           <div key={c.id} className="mb-2 p-2 bg-light rounded shadow-sm">
             <small className="fw-bold text-primary">{c.user}</small>
             <p className="mb-1 small">{c.text}</p>
-            
-            {/* Replies */}
             <div className="ms-4 border-start ps-2">
               {c.replies.map(r => (
                 <div key={r.id} className="small mb-1">
